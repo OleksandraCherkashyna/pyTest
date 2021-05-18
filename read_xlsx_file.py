@@ -1,4 +1,4 @@
-import openpyxl 
+import openpyxl as op
 import logging
 
 logger = logging.getLogger(__name__)
@@ -13,7 +13,7 @@ def enter_filename():
 
 def read_excel_file():
     try:
-        open_file=load_workbook(filename=excel_fname, read_only=True)
+        open_file=op.load_workbook(filename=excel_fname, read_only=True)
         sheet=open_file.active
         sheet_list=open_file.sheetnames
         max_col = sheet.max_column
